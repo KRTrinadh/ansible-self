@@ -1,0 +1,21 @@
+---
+ - name: all var test
+   hosts: all
+   tasks:
+    - name: debug all var
+      debug:
+       msg: "my age is all {{ x  }}"
+
+ - name: web var test
+   hosts: web_servers
+   tasks:
+    - name: debug web var
+      debug:
+       msg: "my age is web {{ y }}"
+
+ - name: db var test
+   hosts: db_servers
+   tasks:
+    - name: db var test
+      debug:
+       msg: "my age is db {{ z }}"

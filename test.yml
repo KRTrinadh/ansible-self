@@ -1,0 +1,9 @@
+---
+ - name: checking disk and RAM
+   hosts: "{{target}}"
+   tasks:
+           - name: checking disk
+             shell: uptime
+           - name: checking ram
+             shell: free -m
+

@@ -1,0 +1,27 @@
+---
+ - name: apt-get update
+   hosts: all
+   become: yes
+   tasks:
+    - apt:
+       update_cache: yes
+
+ - name: inatalling and uninsalling packages
+   hosts: all
+   become: yes
+   tasks:
+    - name: installing  nginx
+      apt:
+       name: nginx
+       state: present
+
+
+ - name: debug module
+   hosts: nrpe_servers
+   become: yes
+   tasks:
+    - name: install nagios nrpe
+      apt:
+       name: "{{ nrpe }}"
+       state: present
+
